@@ -1,13 +1,30 @@
-# Register
-Lapor Pak adalah sebuah program yang dibuat untuk memudahkan warga melaporkan kendala atau keluhan terkait yang ada pada lingkungan, lalu akan dikirim laporan tersebut ke pihak yang berwenang
+# Pesat
+Pesat Website Sekolah untuk melihat informasi mengenai sekolah pesat lebih detail mulai dari Guru, siswa hingga eskul yang ada di Sekolah Pesat
 
-**Lakukan Step2 ini Setelah clone agar code bisa di gunakan**
+**Admin**
+Gunakan /login untuk melakukan Login ke dashboard admin
+
+**Akses Admin**
+Mengelola CRUD : 
+- Siswa
+- Guru
+- Eskul
+- Galeri
+- Berita
+- Profile Sekolah
+
+**Lakukan Step2 ini Setelah clone agar code bisa di gunakan (Lakukan Pada Folder di CMD)**
 1. npm install && npm run build
 2. composer install
 3. copy .env.example .env
 4. php artisan key:generate
-5. php artisan migrate
-6. composer run dev
+5. npm run dev
+
+**Step2 pada Terminal Code Editor kalian**
+1. php artisan migrate
+2. php artisan db:seed --class=UserSeeder
+3. php artisan storage:link
+4. php artisan serve
 
 **Version Requirement** For Laravel 12
 PHP : 8.2 atau di atasnya
