@@ -85,4 +85,11 @@ class GuruController extends Controller
         $guru->delete();
         return redirect()->route('admin.guru.index')->with('success', 'Guru deleted successfully!');
     }
+    public function dashboard()
+{
+    $gurus = Guru::all();
+    $totalGuru = Guru::count();
+    return view('admin', compact('gurus', 'totalGuru'));
+}
+
 }

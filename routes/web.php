@@ -26,26 +26,34 @@ Route::middleware(['guest'])->group(function () {
 });
 
 // Protected routes (require authentication)
+// Protected routes (require authentication)
 Route::middleware(['auth'])->group(function () {
-    // Resource routes for CRUD operations
-    // Route::resource('berita', BeritaController::class);
-    // Route::resource('eskul', EskulController::class);
-    // Route::resource('galeri', GaleriController::class);
-    // Route::resource('guru', GuruController::class);
-    // Route::resource('profil', ProfilController::class);
-    // Route::resource('siswa', SiswaController::class);
-    
+
     // Admin dashboard
     Route::get('/admin', function () {
-        return view('admin');
+        $gurus = Guru::all();
+        $totalGuru = Guru::count();
+    
+        $siswas = Siswa::all();
+        $totalSiswa = Siswa::count();
+    
+        return view('admin', compact('gurus', 'totalGuru', 'siswas', 'totalSiswa'));
     })->middleware('UserAkses:admin')->name('admin');
+    
 
+    // Admin routes for 'guru' and 'siswa'
     Route::prefix('admin')->middleware('UserAkses:admin')->name('admin.')->group(function () {
         Route::resource('guru', GuruController::class);
-    });    
-    // Logout
+    });
+
+    Route::prefix('admin')->middleware('UserAkses:admin')->name('admin.')->group(function () {
+        Route::resource('siswa', SiswaController::class);
+    });
+
+    // Logout route
     Route::get('/logout', [SesiController::class, 'logout'])->name('logout');
 });
+
 
 // Public routes (no authentication required)
 Route::get('/', function() {

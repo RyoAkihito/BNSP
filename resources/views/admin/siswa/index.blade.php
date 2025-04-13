@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Data Guru</title>
+    <title>Data Siswa</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 flex h-screen">
@@ -36,7 +36,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/admin/guru" class="flex items-center space-x-2 p-2 bg-blue-800 rounded">
+                    <a href="/admin/guru" class="flex items-center space-x-2 p-2 hover:bg-blue-700 rounded">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
@@ -61,9 +61,9 @@
     <div class="flex-1 p-8 overflow-y-auto">
         <div class="bg-white rounded-lg shadow-md mb-6">
             <div class="flex justify-between items-center p-6 border-b">
-                <h2 class="text-lg font-semibold">Data Guru</h2>
-                <a href="{{ route('admin.guru.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center space-x-1">
-                    <span>+ Tambah Guru</span>
+                <h2 class="text-lg font-semibold">Data Siswa</h2>
+                <a href="{{ route('admin.siswa.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center space-x-1">
+                    <span>+ Tambah Siswa</span>
                 </a>
             </div>
             <div class="p-6">
@@ -74,30 +74,30 @@
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Foto</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">NIP</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Mata Pelajaran</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">NIS</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kelas</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal Daftar</th>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
-                            @foreach($gurus as $guru)
+                            @foreach($siswas as $siswa)
                             <tr>
-                                <td class="px-6 py-4">{{ $guru->id }}</td>
+                                <td class="px-6 py-4">{{ $siswa->id }}</td>
                                 <td class="px-6 py-4">
-                                    @if($guru->foto)
-                                        <img src="{{ asset('storage/' . $guru->foto) }}" class="h-10 w-10 rounded-full object-cover">
+                                    @if($siswa->foto)
+                                        <img src="{{ asset('storage/' . $siswa->foto) }}" class="h-10 w-10 rounded-full object-cover">
                                     @else
                                         <span class="text-gray-400">-</span>
                                     @endif
                                 </td>
-                                <td class="px-6 py-4">{{ $guru->nama }}</td>
-                                <td class="px-6 py-4">{{ $guru->nip }}</td>
-                                <td class="px-6 py-4">{{ $guru->mata_pelajaran }}</td>
-                                <td class="px-6 py-4">{{ $guru->created_at->format('d M Y') }}</td>
+                                <td class="px-6 py-4">{{ $siswa->nama }}</td>
+                                <td class="px-6 py-4">{{ $siswa->nis }}</td>
+                                <td class="px-6 py-4">{{ $siswa->kelas }}</td>
+                                <td class="px-6 py-4">{{ $siswa->created_at->format('d M Y') }}</td>
                                 <td class="px-6 py-4 flex space-x-2">
-                                    <a href="{{ route('admin.guru.edit', $guru->id) }}" class="text-blue-600 hover:underline">Edit</a>
-                                    <form action="{{ route('admin.guru.destroy', $guru->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus data ini?');">
+                                    <a href="{{ route('admin.siswa.edit', $siswa->id) }}" class="text-blue-600 hover:underline">Edit</a>
+                                    <form action="{{ route('admin.siswa.destroy', $siswa->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus data ini?');">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="text-red-600 hover:underline">Hapus</button>
