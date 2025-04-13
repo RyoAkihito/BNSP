@@ -26,6 +26,14 @@ Mengelola CRUD :
 3. php artisan storage:link
 4. php artisan serve
 
+**Copy Pada env**
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=Pesat
+DB_USERNAME=root
+DB_PASSWORD=
+
 **Version Requirement** For Laravel 12
 PHP : 8.2 atau di atasnya
 
