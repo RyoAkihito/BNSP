@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tenaga Pendidik - SMK Nusantara</title>
+    <title>Tenaga Pendidik - SMK Pesat</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -111,7 +111,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="/api/placeholder/200/50" alt="Logo SMK Nusantara">
+                {{-- <img src="/api/placeholder/200/50" alt="Logo SMK Pesat"> --}}
+                <h3>SMK Pesat</h3>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -122,19 +123,22 @@
                         <a class="nav-link" href="/">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profil</a>
+                        <a class="nav-link" href="/profil">Profil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Akademik</a>
+                        <a class="nav-link" href="/eskul">Ekstrakulikuler</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Tenaga Pendidik</a>
+                        <a class="nav-link active" href="/guru">Tenaga Pendidik</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Fasilitas</a>
+                        <a class="nav-link" href="/siswa">Siswa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Kontak</a>
+                        <a class="nav-link" href="/galeri">Galeri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/berita">Berita</a>
                     </li>
                 </ul>
             </div>
@@ -152,7 +156,7 @@
                         <p class="lead">Guru-guru berkualitas dan berpengalaman yang mendedikasikan diri untuk pendidikan siswa kami</p>
                     </div>
                     <div class="col-md-6 text-end">
-                        <img src="/api/placeholder/400/200" alt="Guru SMK Nusantara" class="img-fluid rounded">
+                        {{-- <img src="/api/placeholder/400/200" alt="Guru SMK Pesat" class="img-fluid rounded"> --}}
                     </div>
                 </div>
             </div>
@@ -162,46 +166,12 @@
         <div class="container">
             <!-- Search and Filter -->
             <div class="row mb-4">
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <span class="input-group-text bg-white"><i class="fas fa-search"></i></span>
-                        <input type="text" class="form-control" placeholder="Cari guru..." id="searchInput">
-                    </div>
-                </div>
-                <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                <div class="col-md-6  mt-3 mt-md-0">
                     <div class="btn-group">
                         <button class="btn btn-outline-primary filter-btn active" data-filter="all">Semua</button>
                         <button class="btn btn-outline-primary filter-btn" data-filter="matematika">Matematika</button>
                         <button class="btn btn-outline-primary filter-btn" data-filter="bahasa">Bahasa</button>
                         <button class="btn btn-outline-primary filter-btn" data-filter="kejuruan">Kejuruan</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Stats -->
-            <div class="row mb-5">
-                <div class="col-md-4">
-                    <div class="card bg-light-blue mb-3">
-                        <div class="card-body text-center">
-                            <h3 class="card-title">42</h3>
-                            <p class="card-text">Total Guru</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card bg-light-blue mb-3">
-                        <div class="card-body text-center">
-                            <h3 class="card-title">12</h3>
-                            <p class="card-text">Mata Pelajaran</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card bg-light-blue mb-3">
-                        <div class="card-body text-center">
-                            <h3 class="card-title">85%</h3>
-                            <p class="card-text">Bersertifikasi</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -255,24 +225,6 @@
                 <!-- Lebih banyak guru... -->
             </div>
 
-            <!-- Pagination -->
-            <div class="row mt-4">
-                <div class="col-12">
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
         </div>
 
         <!-- Call to Action -->
@@ -296,7 +248,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4 mb-4 mb-md-0">
-                    <h5>SMK Nusantara</h5>
+                    <h5>SMK Pesat</h5>
                     <p>Mendidik generasi masa depan dengan keterampilan, pengetahuan, dan nilai-nilai yang membuat mereka siap menghadapi tantangan global.</p>
                     <div class="social-icons mt-3">
                         <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
@@ -309,7 +261,7 @@
                     <h5>Kontak Kami</h5>
                     <p><i class="fas fa-map-marker-alt me-2"></i> Jl. Pendidikan No. 123, Jakarta</p>
                     <p><i class="fas fa-phone me-2"></i> (021) 1234-5678</p>
-                    <p><i class="fas fa-envelope me-2"></i> info@smknusantara.sch.id</p>
+                    <p><i class="fas fa-envelope me-2"></i> info@smkPesat.sch.id</p>
                 </div>
                 <div class="col-md-4">
                     <h5>Tautan Cepat</h5>
@@ -325,7 +277,7 @@
             <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
             <div class="row">
                 <div class="col-md-6">
-                    <p class="mb-md-0">© 2025 SMK Nusantara. Hak Cipta Dilindungi.</p>
+                    <p class="mb-md-0">© 2025 SMK Pesat. Hak Cipta Dilindungi.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <a href="#" class="text-white text-decoration-none me-3">Kebijakan Privasi</a>
