@@ -294,7 +294,8 @@
                             </svg>
                             <div>
                                 <h3 class="font-medium">Telepon</h3>
-                                <p class="text-sm text-gray-600">(021) 1234-5678</p>
+                                <p class="text-sm text-gray-600">0877-1117-7442
+</p>
                             </div>
                         </li>
                         <li class="flex items-start space-x-3">

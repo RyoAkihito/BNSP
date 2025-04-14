@@ -11,22 +11,18 @@
         <form action="{{ route('admin.guru.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Nama -->
                 <div>
                     <label class="block mb-1 font-medium">Nama</label>
                     <input type="text" name="nama" class="w-full border rounded px-3 py-2" required>
                 </div>
-                <!-- NIP -->
                 <div>
                     <label class="block mb-1 font-medium">NIP</label>
                     <input type="text" name="nip" class="w-full border rounded px-3 py-2" required>
                 </div>
-                <!-- Mata Pelajaran -->
                 <div>
                     <label class="block mb-1 font-medium">Mata Pelajaran</label>
                     <input type="text" name="mata_pelajaran" class="w-full border rounded px-3 py-2" required>
                 </div>
-                <!-- Foto (opsional) -->
                 <div>
                     <label class="block mb-1 font-medium">Foto (opsional)</label>
                     <input type="file" name="foto" class="w-full border rounded px-3 py-2">

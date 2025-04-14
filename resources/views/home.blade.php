@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,34 @@
             --secondary: #6c757d;
             --success: #198754;
         }
-        
+
+        .student-card {
+            transition: transform 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .student-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .student-img-container {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .student-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .student-card:hover .student-img {
+            transform: scale(1.05);
+        }
+
         /* Styles untuk body dan container utama */
         body {
             min-height: 100vh;
@@ -21,11 +49,12 @@
             margin: 0;
             padding: 0;
         }
-        
+
         .main-content {
-            flex: 1 0 auto; /* Mendorong footer ke bawah */
+            flex: 1 0 auto;
+            /* Mendorong footer ke bawah */
         }
-        
+
         /* Style untuk footer */
         .footer {
             background-color: #343a40;
@@ -41,7 +70,7 @@
             padding-right: 30px;
             max-width: 100%;
         }
-        
+
         /* Style untuk hero section */
         .hero-section {
             background: linear-gradient(rgba(13, 110, 253, 0.8), rgba(13, 110, 253, 0.9)), url('/api/placeholder/1200/600');
@@ -51,24 +80,24 @@
             padding: 120px 0;
             margin-bottom: 50px;
         }
-        
+
         .hero-text h1 {
             font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 20px;
         }
-        
+
         .navbar-brand img {
             height: 50px;
         }
-        
+
         /* Style untuk section */
         .section-heading {
             position: relative;
             padding-bottom: 15px;
             margin-bottom: 30px;
         }
-        
+
         .section-heading:after {
             content: '';
             position: absolute;
@@ -78,12 +107,12 @@
             bottom: 0;
             left: 0;
         }
-        
+
         .section-heading.text-center:after {
             left: 50%;
             transform: translateX(-50%);
         }
-        
+
         /* Style untuk card */
         .feature-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -91,25 +120,25 @@
             overflow: hidden;
             height: 100%;
         }
-        
+
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
-        
+
         .feature-icon {
             font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 20px;
         }
-        
+
         /* Style untuk testimoni */
         .testimonial-card {
             border-radius: 15px;
             padding: 25px;
             margin: 15px 0;
         }
-        
+
         .testimonial-img {
             width: 80px;
             height: 80px;
@@ -117,25 +146,25 @@
             object-fit: cover;
             border: 3px solid var(--primary);
         }
-        
+
         /* Style untuk counter */
         .counter-section {
             background-color: #f0f7ff;
             padding: 70px 0;
         }
-        
+
         .counter-box {
             text-align: center;
             padding: 20px;
         }
-        
+
         .counter-number {
             font-size: 3rem;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 10px;
         }
-        
+
         /* Style untuk berita */
         .news-card {
             transition: transform 0.3s ease;
@@ -143,34 +172,62 @@
             overflow: hidden;
             height: 100%;
         }
-        
+
         .news-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
-        
+
         .news-img-container {
-            height: 200px;
+            height: 350px;
             overflow: hidden;
         }
-        
+
         .news-img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .news-card:hover .news-img {
+            transform: scale(1.05);
+        }
+
+        .news-date {
+            color: var(--primary);
+            font-size: 0.85rem;
+        }
+
+        .teacher-card {
+            transition: transform 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .teacher-img-container {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .teacher-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-        
-        .news-card:hover .news-img {
+
+        .teacher-card:hover .teacher-img {
             transform: scale(1.05);
-        }
-        
-        .news-date {
-            color: var(--primary);
-            font-size: 0.85rem;
         }
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
@@ -218,59 +275,27 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 hero-text">
                         <h1>SMK Pesat</h1>
-                        <p class="lead mb-4">Mencetak generasi unggul yang siap bersaing di era digital dengan keterampilan dan nilai luhur.</p>
+                        <p class="lead mb-4">Mencetak generasi unggul yang siap bersaing di era digital dengan
+                            keterampilan dan nilai luhur.</p>
                         <a href="#" class="btn btn-light btn-lg me-2">Tentang Kami</a>
                         <a href="#" class="btn btn-outline-light btn-lg">Pendaftaran</a>
                     </div>
                     <div class="col-lg-6 d-none d-lg-block">
-                        {{-- <img src="/api/placeholder/600/400" alt="Siswa SMK Pesat" class="img-fluid rounded"> --}}
+                        <img src="{{ '/Foto/ahmad bg.png' }}" alt="Siswa SMK Pesat" class="img-fluid rounded">
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section class="container mb-5">
-            <div class="row">
-                <div class="col-md-6 mb-4 mb-md-0">
-                    {{-- <img src="/api/placeholder/600/400" alt="Tentang SMK Pesat" class="img-fluid rounded shadow"> --}}
-                </div>
-                <div class="col-md-6">
-                    <h2 class="section-heading">Tentang SMK Pesat</h2>
-                    <p>SMK Pesat adalah lembaga pendidikan kejuruan yang berdedikasi untuk mengembangkan potensi siswa dalam berbagai bidang keahlian. Kami mempersiapkan siswa untuk menjadi tenaga kerja profesional yang kompeten dan mampu bersaing di dunia industri.</p>
-                    <p>Dengan pendekatan pembelajaran yang inovatif dan fasilitas modern, kami memastikan setiap siswa mendapatkan pendidikan terbaik untuk masa depan mereka.</p>
-                    <div class="row mt-4">
-                        <div class="col-6">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-check-circle text-primary me-2"></i>
-                                <span>Pendidikan Berkualitas</span>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-check-circle text-primary me-2"></i>
-                                <span>Fasilitas Modern</span>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-check-circle text-primary me-2"></i>
-                                <span>Tenaga Pengajar Profesional</span>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-check-circle text-primary me-2"></i>
-                                <span>Kurikulum Industri</span>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#" class="btn btn-primary mt-3">Selengkapnya <i class="fas fa-arrow-right ms-2"></i></a>
-                </div>
-            </div>
-        </section>
+
+
 
         <!-- Programs Section -->
         <section class="container mb-5">
             <h2 class="section-heading text-center">Program Keahlian</h2>
             <p class="text-center text-muted mb-5">Pilih program keahlian sesuai dengan minat dan bakat Anda</p>
-            
+
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card feature-card h-100">
@@ -278,8 +303,10 @@
                             <div class="feature-icon">
                                 <i class="fas fa-laptop-code"></i>
                             </div>
-                            <h4>Teknik Komputer & Jaringan</h4>
-                            <p class="text-muted">Program yang fokus pada pengembangan keterampilan di bidang jaringan komputer, pemrograman, dan troubleshooting perangkat keras.</p>
+                            <h4>Rekayasa Perangkat Lunak</h4>
+                            <p class="text-muted">Program yang fokus pada pengembangan Website mulai dari Front-end
+                                hingga Back-end
+                                , pemrograman, dan troubleshooting Error pemrograman.</p>
                             <a href="#" class="btn btn-outline-primary mt-3">Lihat Detail</a>
                         </div>
                     </div>
@@ -288,10 +315,12 @@
                     <div class="card feature-card h-100">
                         <div class="card-body text-center p-4">
                             <div class="feature-icon">
-                                <i class="fas fa-chart-line"></i>
+                                <i class="fa-solid fa-tower-cell"></i>
                             </div>
-                            <h4>Akuntansi & Keuangan</h4>
-                            <p class="text-muted">Program yang mempersiapkan siswa untuk menjadi tenaga profesional di bidang akuntansi, perpajakan, dan keuangan.</p>
+                            <h4>Teknik Komputer dan Jaringan</h4>
+                            <p class="text-muted">Program yang mempersiapkan siswa untuk menjadi
+                                tenaga profesional di pengembangan Server serta melakukan troubleshooting pada perangkat
+                                keras.</p>
                             <a href="#" class="btn btn-outline-primary mt-3">Lihat Detail</a>
                         </div>
                     </div>
@@ -303,7 +332,8 @@
                                 <i class="fas fa-palette"></i>
                             </div>
                             <h4>Desain Komunikasi Visual</h4>
-                            <p class="text-muted">Program yang mengembangkan kreativitas siswa dalam bidang desain grafis, animasi, dan multimedia.</p>
+                            <p class="text-muted">Program yang mengembangkan kreativitas siswa dalam bidang desain
+                                grafis, animasi, dan multimedia.</p>
                             <a href="#" class="btn btn-outline-primary mt-3">Lihat Detail</a>
                         </div>
                     </div>
@@ -317,13 +347,13 @@
                 <div class="row">
                     <div class="col-md-3 col-6 mb-4 mb-md-0">
                         <div class="counter-box">
-                            <div class="counter-number">1250+</div>
+                            <div class="counter-number">{{ $totalSiswa }}</div>
                             <div class="counter-text">Siswa Aktif</div>
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mb-4 mb-md-0">
                         <div class="counter-box">
-                            <div class="counter-number">75+</div>
+                            <div class="counter-number">{{ $totalGuru }}</div>
                             <div class="counter-text">Tenaga Pengajar</div>
                         </div>
                     </div>
@@ -343,8 +373,119 @@
             </div>
         </section>
 
+        <div class="container">
+            <!-- Search and Filter -->
+            {{-- <div class="row mb-4">
+                <div class="col-md-6  mt-3 mt-md-0">
+                    <div class="btn-group">
+                        <button class="btn btn-outline-primary filter-btn active" data-filter="all">Semua</button>
+                        <button class="btn btn-outline-primary filter-btn"
+                            data-filter="matematika">Matematika</button>
+                        <button class="btn btn-outline-primary filter-btn" data-filter="bahasa">Bahasa</button>
+                        <button class="btn btn-outline-primary filter-btn" data-filter="kejuruan">Kejuruan</button>
+                    </div>
+                </div>
+            </div> --}}
+
+            <h2 class="mb-4 text-center">Daftar Tenaga Pendidik</h2>
+            <p class="text-center text-muted mb-5">Temui para pendidik berpengalaman yang akan membimbing siswa
+                mencapai potensi terbaik mereka</p>
+
+            <!-- Teacher Cards -->
+            <div class="row" id="guruContainer">
+                @forelse($gurus as $guru)
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow teacher-card">
+                            <div class="teacher-img-container">
+                                @if ($guru->foto)
+                                    <img src="{{ asset('storage/' . $guru->foto) }}" class="teacher-img"
+                                        alt="Foto {{ $guru->nama }}">
+                                @else
+                                    <img src="/api/placeholder/300/250" class="teacher-img" alt="Foto Default">
+                                @endif
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">{{ $guru->nama }}</h5>
+                                <p class="card-text text-muted mb-2"><i
+                                        class="fas fa-id-card me-2"></i>{{ $guru->nip }}</p>
+                                <p class="card-text mb-3">
+                                    <span class="subject-badge">
+                                        <i class="fas fa-book me-1"></i>{{ $guru->mata_pelajaran }}
+                                    </span>
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                                        data-bs-target="#gurumodal{{ $guru->id }}">Lihat Profil</button>
+                                    <div>
+                                        <a href="#" class="btn btn-sm btn-light"><i
+                                                class="fas fa-envelope"></i></a>
+                                        <a href="#" class="btn btn-sm btn-light"><i
+                                                class="fas fa-phone"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="gurumodal{{ $guru->id }}" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Profil Guru</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            @if ($guru->foto)
+                                                <img src="{{ asset('storage/' . $guru->foto) }}"
+                                                    class="img-fluid rounded" alt="Foto {{ $guru->nama }}">
+                                            @else
+                                                <img src="/api/placeholder/300/300" class="img-fluid rounded"
+                                                    alt="Foto Default">
+                                            @endif
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h4>{{ $guru->nama }}</h4>
+                                            <p><strong>NIS:</strong> {{ $guru->nip }}</p>
+                                            <p><strong>Kelas:</strong> {{ $guru->mata_pelajaran }}</p>
+
+                                            <!-- Extra information that could be added in future updates -->
+                                            <div class="mt-4">
+                                                <h5>Aktivitas</h5>
+                                                <div class="d-flex flex-wrap gap-2 mt-2">
+                                                    <span class="badge bg-light text-dark">Kepala Kurikulum</span>
+                                                    <span class="badge bg-light text-dark">BK Pesat</span>
+                                                    {{-- <span class="badge bg-light text-dark">Basket</span> --}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="col-12 text-center py-5">
+                        <div class="d-flex flex-column align-items-center">
+                            <img src="/api/placeholder/200/200" alt="Data Kosong" class="mb-3">
+                            <h4>Belum ada data guru</h4>
+                            <p class="text-muted">Data tenaga pendidik akan segera ditambahkan.</p>
+                        </div>
+                    </div>
+                @endforelse
+
+                <!-- Sample data -->
+
+
+                <!-- Lebih banyak guru... -->
+            </div>
+
+        </div>
+
         <!-- Testimonials Section -->
-        <section class="container mb-5">
+        <!-- <section class="container mb-5">
             <h2 class="section-heading text-center">Testimoni Alumni</h2>
             <p class="text-center text-muted mb-5">Apa kata alumni tentang pengalaman mereka di SMK Pesat</p>
             
@@ -392,57 +533,172 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+
+        <div class="container">
+            <!-- Search and Filter -->
+            <div class="row mb-4">
+                {{-- <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white">
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <input type="text" id="searchInput" class="form-control" placeholder="Cari siswa...">
+                    </div>
+                </div> --}}
+                {{-- <div class="col-md-6 mt-3 mt-md-0">
+                    <div class="btn-group">
+                        <button class="btn btn-outline-primary filter-btn active" data-filter="all">Semua</button>
+                        <button class="btn btn-outline-primary filter-btn" data-filter="X">Kelas X</button>
+                        <button class="btn btn-outline-primary filter-btn" data-filter="XI">Kelas XI</button>
+                        <button class="btn btn-outline-primary filter-btn" data-filter="XII">Kelas XII</button>
+                    </div>
+                </div> --}}
+            </div>
+
+            <h2 class="mb-4 text-center">Direktori Siswa</h2>
+            <p class="text-center text-muted mb-5">Temui para siswa berbakat SMK Pesat yang siap bersaing di dunia
+                kerja</p>
+
+            <!-- Student Cards -->
+            <div class="row" id="siswaContainer">
+                @forelse($siswas as $siswa)
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow student-card">
+                            <div class="student-img-container">
+                                @if ($siswa->foto)
+                                    <img src="{{ asset('storage/' . $siswa->foto) }}" class="student-img"
+                                        alt="Foto {{ $siswa->nama }}">
+                                @else
+                                    <img src="/api/placeholder/300/250" class="student-img" alt="Foto Default">
+                                @endif
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">{{ $siswa->nama }}</h5>
+                                <p class="card-text text-muted mb-2"><i
+                                        class="fas fa-id-card me-2"></i>{{ $siswa->nis }}</p>
+                                <p class="card-text mb-3">
+                                    <span class="kelas-badge">
+                                        <i class="fas fa-user-graduate me-1"></i>{{ $siswa->kelas }}
+                                    </span>
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                                        data-bs-target="#siswaModal{{ $siswa->id }}">Lihat Profil</button>
+                                    <div>
+                                        <a href="#" class="btn btn-sm btn-light"><i class="fas fa-award"
+                                                title="Prestasi"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal untuk detail siswa -->
+                    <div class="modal fade" id="siswaModal{{ $siswa->id }}" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Profil Siswa</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            @if ($siswa->foto)
+                                                <img src="{{ asset('storage/' . $siswa->foto) }}"
+                                                    class="img-fluid rounded" alt="Foto {{ $siswa->nama }}">
+                                            @else
+                                                <img src="/api/placeholder/300/300" class="img-fluid rounded"
+                                                    alt="Foto Default">
+                                            @endif
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h4>{{ $siswa->nama }}</h4>
+                                            <p><strong>NIS:</strong> {{ $siswa->nis }}</p>
+                                            <p><strong>Kelas:</strong> {{ $siswa->kelas }}</p>
+
+                                            <!-- Extra information that could be added in future updates -->
+                                            <div class="mt-4">
+                                                <h5>Aktivitas</h5>
+                                                <div class="d-flex flex-wrap gap-2 mt-2">
+                                                    <span class="badge bg-light text-dark">OSIS</span>
+                                                    <span class="badge bg-light text-dark">Pramuka</span>
+                                                    <span class="badge bg-light text-dark">Basket</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="col-12 text-center py-5">
+                        <div class="d-flex flex-column align-items-center">
+                            <img src="/api/placeholder/200/200" alt="Data Kosong" class="mb-3">
+                            <h4>Belum ada data siswa</h4>
+                            <p class="text-muted">Data siswa akan segera ditambahkan.</p>
+                        </div>
+                    </div>
+                @endforelse
+            </div>
+        </div>
 
         <!-- Latest News Section -->
         <section class="container mb-5">
             <h2 class="section-heading text-center">Berita Terbaru</h2>
             <p class="text-center text-muted mb-5">Ikuti perkembangan dan kegiatan terbaru di SMK Pesat</p>
-            
+
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card news-card h-100">
                         <div class="news-img-container">
-                            {{-- <img src="/api/placeholder/400/300" class="news-img" alt="Berita 1"> --}}
+                            <img src="{{ ('/Foto/Sanlat.jpg') }}" class="facility-img" alt="Lomba UI UX">
                         </div>
                         <div class="card-body">
                             <p class="news-date"><i class="far fa-calendar-alt me-2"></i>10 April 2025</p>
-                            <h5 class="card-title">Kunjungan Industri ke PT Teknologi Indonesia</h5>
-                            <p class="card-text">Siswa jurusan TKJ melakukan kunjungan industri untuk mempelajari perkembangan teknologi terbaru.</p>
-                            <a href="#" class="btn btn-link p-0">Baca selengkapnya <i class="fas fa-arrow-right ms-1"></i></a>
+                            <h5 class="card-title">Sanlat SMK Pesat 2025</h5>
+                            <p class="card-text">Sebuah perjalanan penuh makna, di mana kita bersama-sama menguatkan iman, menaklukkan hawa nafsu, dan meraih kemenangan sejati di bulan suci ini!</p>
+                            <a href="#" class="btn btn-link p-0">Baca selengkapnya <i
+                                    class="fas fa-arrow-right ms-1"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card news-card h-100">
                         <div class="news-img-container">
-                            {{-- <img src="/api/placeholder/400/300" class="news-img" alt="Berita 2"> --}}
+                            <img src="{{ ('/Foto/Mabit XII.jpg') }}" class="facility-img" alt="Lomba UI UX">
                         </div>
                         <div class="card-body">
                             <p class="news-date"><i class="far fa-calendar-alt me-2"></i>8 April 2025</p>
-                            <h5 class="card-title">SMK Pesat Juara Lomba Desain Nasional</h5>
-                            <p class="card-text">Tim DKV berhasil meraih juara pertama dalam kompetisi desain tingkat nasional.</p>
-                            <a href="#" class="btn btn-link p-0">Baca selengkapnya <i class="fas fa-arrow-right ms-1"></i></a>
+                            <h5 class="card-title">Kegiatan Mabit Kelas XII</h5>
+                            <p class="card-text">Malam Bina Iman dan Taqwa (Mabit) terakhir bagi kelas XII bukan sekadar pertemuan, melainkan momen mengukir kenangan, merajut doa.</p>
+                            <a href="#" class="btn btn-link p-0">Baca selengkapnya <i
+                                    class="fas fa-arrow-right ms-1"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card news-card h-100">
                         <div class="news-img-container">
-                            {{-- <img src="/api/placeholder/400/300" class="news-img" alt="Berita 3"> --}}
+                            <img src="{{ ('/Foto/Umroh.jpg') }}" class="facility-img" alt="Lomba UI UX">
                         </div>
                         <div class="card-body">
                             <p class="news-date"><i class="far fa-calendar-alt me-2"></i>5 April 2025</p>
-                            <h5 class="card-title">Workshop Kewirausahaan untuk Siswa</h5>
-                            <p class="card-text">Workshop ini bertujuan menumbuhkan jiwa kewirausahaan dan inovasi di kalangan siswa.</p>
-                            <a href="#" class="btn btn-link p-0">Baca selengkapnya <i class="fas fa-arrow-right ms-1"></i></a>
+                            <h5 class="card-title">Pelepasan Penerima Beasiswa Umroh</h5>
+                            <p class="card-text">Doa dan harapan terbaik mengiringi langkah mereka menuju Tanah Suci.
+                                Semoga perjalanan lancar, ibadah diterima, dan kembali dengan selamat. Aamiin.</p>
+                            <a href="#" class="btn btn-link p-0">Baca selengkapnya <i
+                                    class="fas fa-arrow-right ms-1"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-4">
+            {{-- <div class="text-center mt-4">
                 <a href="#" class="btn btn-outline-primary">Lihat Semua Berita</a>
-            </div>
+            </div> --}}
         </section>
 
         <!-- CTA Section -->
@@ -452,10 +708,12 @@
                     <div class="row align-items-center">
                         <div class="col-lg-8">
                             <h3>Siap Bergabung dengan SMK Pesat?</h3>
-                            <p class="mb-lg-0">Daftarkan diri Anda sekarang dan jadilah bagian dari generasi penerus yang unggul dan berprestasi.</p>
+                            <p class="mb-lg-0">Daftarkan diri Anda sekarang dan jadilah bagian dari generasi penerus
+                                yang unggul dan berprestasi.</p>
                         </div>
                         <div class="col-lg-4 text-lg-end">
-                            <a href="#" class="btn btn-light">Daftar Sekarang <i class="fas fa-arrow-right ms-2"></i></a>
+                            <a href="#" class="btn btn-light">Daftar Sekarang <i
+                                    class="fas fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -469,7 +727,8 @@
             <div class="row">
                 <div class="col-md-4 mb-4 mb-md-0">
                     <h5>SMK Pesat</h5>
-                    <p>Mendidik generasi masa depan dengan keterampilan, pengetahuan, dan nilai-nilai yang membuat mereka siap menghadapi tantangan global.</p>
+                    <p>Mendidik generasi masa depan dengan keterampilan, pengetahuan, dan nilai-nilai yang membuat
+                        mereka siap menghadapi tantangan global.</p>
                     <div class="social-icons mt-3">
                         <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
@@ -479,9 +738,11 @@
                 </div>
                 <div class="col-md-4 mb-4 mb-md-0">
                     <h5>Kontak Kami</h5>
-                    <p><i class="fas fa-map-marker-alt me-2"></i> Jl. Pendidikan No. 123, Jakarta</p>
-                    <p><i class="fas fa-phone me-2"></i> (021) 1234-5678</p>
-                    <p><i class="fas fa-envelope me-2"></i> info@smkPesat.sch.id</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Jl. Poras No. 7 Sindang Barang - Loji Kecamatan Bogor
+                        Barat, Provinsi Jawa Barat - Indonesia</p>
+                    <p><i class="fas fa-phone me-2"></i> 0877-1117-7442
+                    </p>
+                    <p><i class="fas fa-envelope me-2"></i>smkit.pesat@gmail.com</p>
                 </div>
                 <div class="col-md-4">
                     <h5>Tautan Cepat</h5>
@@ -509,5 +770,55 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            const searchValue = this.value.toLowerCase();
+            const cards = document.querySelectorAll('#guruContainer .col-md-4');
+
+            cards.forEach(card => {
+                const name = card.querySelector('.card-title').textContent.toLowerCase();
+                const subject = card.querySelector('.subject-badge').textContent.toLowerCase();
+                if (name.includes(searchValue) || subject.includes(searchValue)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                // Get filter value
+                const filterValue = this.getAttribute('data-filter');
+
+                // Filter cards
+                const cards = document.querySelectorAll('#guruContainer .col-md-4');
+                cards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = '';
+                        return;
+                    }
+
+                    const subject = card.querySelector('.subject-badge').textContent.toLowerCase();
+                    if (subject.includes(filterValue)) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>
+

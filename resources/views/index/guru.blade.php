@@ -249,7 +249,9 @@
             <div class="row">
                 <div class="col-md-4 mb-4 mb-md-0">
                     <h5>SMK Pesat</h5>
-                    <p>Mendidik generasi masa depan dengan keterampilan, pengetahuan, dan nilai-nilai yang membuat mereka siap menghadapi tantangan global.</p>
+                    <p>Sekolah Umum Berbasis Keagamaan Berkarakter Akhlak Mulia Pilihan Anak - anak Terpilih
+
+</p>
                     <div class="social-icons mt-3">
                         <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
@@ -259,9 +261,10 @@
                 </div>
                 <div class="col-md-4 mb-4 mb-md-0">
                     <h5>Kontak Kami</h5>
-                    <p><i class="fas fa-map-marker-alt me-2"></i> Jl. Pendidikan No. 123, Jakarta</p>
-                    <p><i class="fas fa-phone me-2"></i> (021) 1234-5678</p>
-                    <p><i class="fas fa-envelope me-2"></i> info@smkPesat.sch.id</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Jl. Poras No. 7 Sindang Barang - Loji Kecamatan Bogor Barat, Provinsi Jawa Barat - Indonesia</p>
+                    <p><i class="fas fa-phone me-2"></i> 0877-1117-7442
+</p>
+                    <p><i class="fas fa-envelope me-2"></i>smkit.pesat@gmail.com</p>
                 </div>
                 <div class="col-md-4">
                     <h5>Tautan Cepat</h5>
@@ -306,20 +309,15 @@
             });
         });
         
-        // Filter functionality
         const filterButtons = document.querySelectorAll('.filter-btn');
         filterButtons.forEach(button => {
             button.addEventListener('click', function() {
-                // Remove active class from all buttons
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 
-                // Add active class to clicked button
                 this.classList.add('active');
                 
-                // Get filter value
                 const filterValue = this.getAttribute('data-filter');
                 
-                // Filter cards
                 const cards = document.querySelectorAll('#guruContainer .col-md-4');
                 cards.forEach(card => {
                     if (filterValue === 'all') {

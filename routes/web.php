@@ -56,8 +56,19 @@ Route::middleware(['auth'])->group(function () {
 
 
 // Public routes (no authentication required)
-Route::get('/', function() {
-    return view('home');
+// Route::get('/', function() {
+//     return view('home');
+// })->name('home');
+
+Route::get('/', function () {
+    $gurus = \App\Models\Guru::all();
+    $siswas = Siswa::all();
+
+    $totalSiswa = Siswa::count();
+    $totalGuru = Guru::count();
+
+
+    return view('home', compact('gurus', 'totalGuru','totalSiswa','siswas'));
 })->name('home');
 
 // Public routes with data
