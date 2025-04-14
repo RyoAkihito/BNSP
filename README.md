@@ -8,10 +8,6 @@ Gunakan /login untuk melakukan Login ke dashboard admin
 Mengelola CRUD : 
 - Siswa
 - Guru
-- Eskul
-- Galeri
-- Berita
-- Profile Sekolah
 
 **Lakukan Step2 ini Setelah clone agar code bisa di gunakan (Lakukan Pada Folder di CMD)**
 1. npm install && npm run build
